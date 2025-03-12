@@ -1,7 +1,10 @@
 package learningSpringMVC.models;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Person {
   private int id;
+  @NotEmpty(message = "name should not be empty")
   private String name;
 
   public Person(int id, String name) {
