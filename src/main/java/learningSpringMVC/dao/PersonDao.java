@@ -7,12 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PersonDao {
+  private static int COUNTER;
   private List<Person> people;
   {
     people = new ArrayList<>();
-    people.add(new Person(1, "ww"));
-    people.add(new Person(2, "pop"));
-    people.add(new Person(3, "none"));
+    people.add(new Person(++COUNTER, "ww"));
+    people.add(new Person(++COUNTER, "pop"));
+    people.add(new Person(++COUNTER, "none"));
   }
 
   public List<Person> index() {
@@ -22,5 +23,10 @@ public class PersonDao {
   public Person show(int id) {
     return people.stream().filter(person -> person.getId() == id)
         .findAny().orElseThrow();
+  }
+
+  public void save(Person person) {
+    person.setId(++COUNTER);
+    people.add(person);
   }
 }

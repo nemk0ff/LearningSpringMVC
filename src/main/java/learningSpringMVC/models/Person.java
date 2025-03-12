@@ -17,6 +17,9 @@ public class Person {
     this.id = id;
   }
 
+  public Person() {
+  }
+
   public String getName() {
     return name;
   }
