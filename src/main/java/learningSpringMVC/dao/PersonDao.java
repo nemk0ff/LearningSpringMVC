@@ -29,4 +29,9 @@ public class PersonDao {
     person.setId(++COUNTER);
     people.add(person);
   }
+
+  public void update(int id, Person person) {
+    Person personToBeUpdated = show(id);
+    personToBeUpdated.setName(person.getName());
+  }
 }
