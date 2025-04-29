@@ -4,3 +4,4 @@
 Используемые технологии:
 - Spring MVC
 - Thymeleaf
+- Servlets
